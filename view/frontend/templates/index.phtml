@@ -1,0 +1,52 @@
+<?php
+/** @var $block Syncitgroup\Sgform\Block\Index */
+?>
+<div id="custom-form">
+    <form class="form contact" action="<?= $block->escapeUrl($block->getUrl('sgform/index/save', ['_secure' => true]));?>" 
+        id="custom-form" method="post" data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>" 
+        data-mage-init='{"validation":{}}'>
+
+        <fieldset class="fieldset">
+            <div class="field name required">
+                <label class="label" for="name"><span><?= $block->escapeHtml($block->escapeHtml(__('Name')))?></span></label>
+                <div class="control">
+                    <input name="name" id="name" title="<?= $block->escapeHtml(__('Name')) ?>" class="input-text" 
+                    type="text" data-validate="{required:true}"/>
+                </div>
+            </div>
+
+            <div class="field email required">
+                <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+                <div class="control">
+                    <input name="email" id="email" title="<?= $block->escapeHtml(__('Email')) ?>" class="input-text" type="email" 
+                    data-validate="{required:true, 'validate-email':true}"/>
+                </div>
+            </div>
+
+            <div class="field telephone">
+                <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
+                <div class="control">
+                    <input name="telephone" id="telephone" title="<?= $block->escapeHtml(__('Phone Number'))?>" value="" 
+                    class="input-text" type="text" />
+                </div>
+            </div>
+
+            <div class="field comment required">
+                <label class="label" for="comment"><span><?= $block->escapeHtml(__('What’s on your mind?')) ?></span></label>
+                <div class="control">
+                    <textarea name="comment" id="comment" title="<?= $block->escapeHtml(__('What’s on your mind?')) ?>" 
+                        class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value="" />
+                <button type="submit" title="<?= $block->escapeHtml(__('Submit'))?>" class="action submit primary" id="custom_btn">
+                    <span><?= $block->escapeHtml(__('Submit')) ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

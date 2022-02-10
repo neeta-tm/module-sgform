@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="syncitgroup" translate="label" sortOrder="999">
+			<label>Syncitgroup</label>
+		</tab>
+		<section id="sgform" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Sgform</label>
+			<tab>syncitgroup</tab>
+			<resource>Syncitgroup_Sgform::config_syncitgroup_sgform</resource>
+			<group id="general" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <attribute type="expanded">1</attribute>
+				<label>General</label>
+				<field id="enable" type="select" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Enable Extension</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+                <field id="status" type="checkbox" translate="label" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Syncitgroup\Sgform\Block\Adminhtml\System\Config\Activate</frontend_model>
+                    <attribute type="shared">1</attribute>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="custom_email" translate="label comment" sortOrder="10" type="text" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email Address</label>
+                    <tooltip>You will get the responses from the users in the email address you define.</tooltip>
+                    <validate>validate-email</validate>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>

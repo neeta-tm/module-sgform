@@ -1,0 +1,20 @@
+{
+  "name": "neeta-tm/module-sgform",
+  "license": [
+    "proprietary"
+  ],
+  "type": "magento2-module",
+  "description": "This Module is to display the sgform to the frontend & send email to the customer if the form submitted successfully.",
+  "version": "100.0.0",
+  "require": {
+        "php": ">=5.6"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Syncitgroup\\Sgform\\": ""
+    }
+  }
+}
